@@ -27,7 +27,15 @@ body, html{
 }
 
 .img-central{
-   
+   flex: 70%;
+}
+
+.teaser1{
+    flex: 15%;
+}
+
+.teaser2{
+    flex: 15%;
 }
 
 footer{
