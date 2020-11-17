@@ -1,0 +1,36 @@
+body, html{
+    margin: 0;
+}
+
+.nav-container{
+    
+    background-color: black;
+    margin: 0;
+}
+
+.nav-titles {
+    color: white;
+    background-color: #b40019;
+    margin: 0;
+}
+
+.centralDiv{
+ margin: 0;
+    border: solid saddlebrown;
+}
+
+.img-central{
+   
+}
+
+footer{
+    
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  height: auto;
+
+}
