@@ -24,18 +24,20 @@ body, html{
 .centralDiv{
  margin: 0;
    display: flex;
+   
 }
 
-.img-central{
-   flex: 70%;
+.centralImg{
+   flex: 80%;
+   min-width: 80%;
 }
 
 .teaser1{
-    flex: 15%;
+    flex: 10%;
 }
 
 .teaser2{
-    flex: 15%;
+    flex: 10%;
 }
 
 footer{

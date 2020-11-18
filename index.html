@@ -1,42 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMP Fake</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EMP Fake</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="./style.css" />
-</head>
+  <body>
+    <!-- NAvBAR -->
+    <nav class="nav-container">
+      <img
+        class="img-fluid img-logo"
+        src="https://www.overdrive.ie/wp-content/uploads/2018/07/emp-logo.png"
+        alt="emp log0"
+      />
+      <div class="nav-titles">
+        <h4>Home</h4>
+        <h4>Men</h4>
+        <h4>Women</h4>
+        <h4>Fun&Lifestyle</h4>
+      </div>
+    </nav>
 
-<body>
- 
-  <nav class="nav-container">
-    <img class="img-fluid img-logo" src="https://www.overdrive.ie/wp-content/uploads/2018/07/emp-logo.png" alt="emp log0">
-    <div class="nav-titles">
-      <h4>Home</h4>
-      <h4>Men</h4>
-      <h4>Women</h4>
-      <h4>Fun&Lifestyle</h4>
+    <!-- central object 1 -->
+    <div class="centralDiv">
+      <div class="centralImg">
+        <img
+          class="img-fluid img-central"
+          src="https://i.pinimg.com/originals/ba/01/31/ba0131776a9c74ee7b6b133ec1c56ee6.jpg"
+          alt="metal-bands"
+        />
+      </div>
     </div>
-  </nav>
 
-  
-<div class="centralDiv">
-  <div class="teaser1">teaser1</div>
-  <div class="centralImg">
-    <img class="img-fluid img-central" src="https://i.pinimg.com/originals/ba/01/31/ba0131776a9c74ee7b6b133ec1c56ee6.jpg" alt="metal-bands">
-  </div>
-  <div class="teaser2">teaser2</div>
-</div>
+    <!-- central object 2 -->
 
+    <div class="centralDiv">
+      <div class="centralImg">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+          </ul>
 
-  <footer>
-    <p>All prices include VAT</p>
-<p>© Daniele - Wanna be E.M.P. Merchandising HGmbH</p> 
-  </footer>
-  
-  
-</body>
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div></div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://m.media-amazon.com/images/I/71dOkhNpV2L._SS500_.jpg"
+                alt="Chicago"
+                width="1100"
+                height="500"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://images-na.ssl-images-amazon.com/images/I/71-Fc%2BwMEML._AC_UY879_.jpg"
+                alt="New York"
+                width="1100"
+                height="500"
+              />
+            </div>
+          </div>
 
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <p>All prices include VAT</p>
+      <p>© Daniele - Wanna be E.M.P. Merchandising HGmbH</p>
+    </footer>
+  </body>
 </html>
