@@ -15,12 +15,10 @@
     <script type="text/javascript" src="/webtrekk_v4.min.js"></script>
     <script>
 
-
-
-
+    // config object 
     var webtrekkConfig = webtrekkConfig || {
         trackId: "876936451222772",
-        trackDomain: "elated-kepler-09285f.netlify.app",
+        trackDomain: "danielebootcampgmbh01.wt-eu02.net",
         domain: "REGEXP:^(.elated-kepler-09285f*\\.netlify\\.app)$",
         mediaCode: "wt_mc",
         cookie: "3",
@@ -36,13 +34,15 @@
             option: {}
         }
     };
-    
-    var pageconfig = {
-    contentId: "", // generates an automatic content ID based on the URL
-    linkTrack: "link", // activates link tracking [link or standard]
-    linkTrackAttribute: "id"
-    };
-    var wt = new webtrekkV3(pageconfig);
+
+    // initate
+    var wt = new webtrekkV3();
+
+// track Event
+    wt.linkTrackInit();
+
+
+    // send data
     wt.sendinfo();
 
     </script>
