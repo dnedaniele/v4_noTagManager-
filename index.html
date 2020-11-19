@@ -13,6 +13,42 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./style.css" />
     <script type="text/javascript" src="/webtrekk_v4.min.js"></script>
+    <script>
+
+
+
+
+    var webtrekkConfig = webtrekkConfig || {
+        trackId: "876936451222772",
+        trackDomain: "elated-kepler-09285f.netlify.app",
+        domain: "REGEXP:^(.elated-kepler-09285f*\\.netlify\\.app)$",
+        mediaCode: "wt_mc",
+        cookie: "3",
+        safetag: {
+            async: true,
+            timeout: 2000,
+            /** Load SafeTag from Webtrekk Server */
+            safetagDomain: "responder.wt-safetag.com",
+            safetagId: "111111111111111",
+            /** Load SafeTag from Customer Server */
+            // customDomain: "www.domain.de",
+            // customPath: "javascripts/webtrekk_safetag.js",
+            option: {}
+        }
+    };
+    
+    var pageconfig = {
+    contentId: "", // generates an automatic content ID based on the URL
+    linkTrack: "link", // activates link tracking [link or standard]
+    linkTrackAttribute: "id"
+    };
+    var wt = new webtrekkV3(pageconfig);
+    wt.sendinfo();
+
+    </script>
+
+
+
 
   </head>
 
