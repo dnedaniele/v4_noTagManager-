@@ -5,7 +5,7 @@ let buttonsList = document.getElementsByClassName("btn btn-primary");
 buttonsList[1].addEventListener("click", function teest(){alert("clicked!")}) // this works
 
 
-for (let i = 0; i < buttonsList.lengt; i++) {    // this does not
+for (let i = 0; i < buttonsList.length; i++) {    // this does not
 
     console.log(buttonsList) 
    buttonsList[i].addEventListener("click", function () {
