@@ -37,11 +37,57 @@
         }
     };
 
+    // Teaser Tracking
+
+// Config Object
+
+window.wt_teaserTracking = function(conf) {
+    if ((conf.mode === "page" || conf.mode === "config") && conf.requestCounter === 1) {
+        var wt_teaserTrackingConfig_v2 = window.wt_teaserTrackingConfig_v2 || {
+            teaserAttribute: "data-wt-teaser",
+            viewPercent: 100,
+            viewTime: 1000,
+            attribution: "all",     // first, last, all
+            maxSendTeasers: {
+                session: 10000,
+                page: 1000
+            },
+            clearConversions: true,
+            autoEngagements: true
+        };
+      }}
+    // 
+
+    
     // initate
     var wt = new webtrekkV3();
-
+    wt.executePluginFunction = "wt_teaserTracking";
     // send data
     wt.sendinfo();
+
+
+
+    window.wt_ttv2 = window.wt_ttv2 || [];
+window.wt_ttv2.push(
+    {
+        selector: "document.body.children[1].children[0]",
+        exclude: [
+          "document.body.children[1].children[1]"
+        ],
+        data: {
+          name: "Night Shopping",
+          rank: "Main Page Banner",
+          content: "20% Discount",
+          variant: "campaign"
+        },
+        conversion: {
+          type: "view",
+          goal: "order",
+          value: "10%"
+        }
+    }
+);
+
 
     </script>
 
@@ -69,7 +115,7 @@
     <!-- central object 1 -->
     <div class="centralDiv">
       <!-- image 1 -->
-      <div class="img-container1 img-fluid discount-img">
+      <div class=" teaser1 img-container1 img-fluid discount-img">
         <div class="card bg-dark text-white">
           <a href="./subpages/nightshopping.html" onclick="wt.sendinfo({linkId:'eventname', customEcommerceParameter:{1: 'NightShop-Teaser'}}); test()">
           <img
@@ -81,7 +127,7 @@
         </div>
       </div>
       <!-- image 2 -->
-      <div class="img-container2 img-fluid">
+      <div class=" teaser2 img-container2 img-fluid">
         <div class="img-fluid img2">
           <div id="demo" class="carousel" data-ride="carousel">
             <!-- Indicators -->
