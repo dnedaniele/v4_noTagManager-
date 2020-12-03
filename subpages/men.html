@@ -11,7 +11,29 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="../style.css" />
   <script type="text/javascript" src="/webtrekk_v4.min.js"></script>
+
   
+
+<!-- Webtrekk Tag Integration -->
+  <script>
+    window._tiConfig = window._tiConfig || {
+    tiDomain: 'responder.wt-safetag.com',
+    tiId: '876936451222772',
+    // customDomain: 'sub.domain.tld',
+    // customPath: 'js/container_script.js',
+    option: {}
+};
+
+/** start TagIntegration loader  */
+(function(a,d,c,f){a.wts=a.wts||[];var g=function(b){var a="";b.customDomain&&b.customPath?a=b.customDomain+"/"+b.customPath:b.tiDomain&&b.tiId&&(a=b.tiDomain+"/resp/api/get/"+b.tiId+"?url="+encodeURIComponent("https://"+d.location.host+"/")+"&v=5");if(b.option)for(var c in b.option)a+="&"+c+"="+encodeURIComponent(b.option[c]);return a};if(-1===d.cookie.indexOf("wt_r=1")){var e=d.getElementsByTagName(c)[0];c=d.createElement(c);c.async=!0;c.onload=function(){if("undefined"!==typeof a.wt_r&&!isNaN(a.wt_r)){var b=
+new Date,c=b.getTime()+1E3*parseInt(a.wt_r);b.setTime(c);d.cookie="wt_r=1;path=/;expires="+b.toUTCString()}};c.onerror=function(){"undefined"!==typeof a.wt_mcp_hide&&"function"===typeof a.wt_mcp_hide.show&&(a.wt_mcp_hide.show(),a.wt_mcp_hide.show=function(){})};c.src="//"+g(f);e.parentNode.insertBefore(c,e)}})(window,document,"script",_tiConfig);
+
+/** end TagIntegration loader */
+
+  </script>
+
+
+
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -89,7 +111,7 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KH7VHCM"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  
+
   <!-- NAvBAR -->
   <nav class="nav-container">
     <img class="img-fluid img-logo" src="https://www.overdrive.ie/wp-content/uploads/2018/07/emp-logo.png"
