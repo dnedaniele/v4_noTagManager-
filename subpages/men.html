@@ -161,15 +161,21 @@
     const productList = [
       {
         id: 1,
-        name : "Men Shirt",
-        image: "",
+        name : "Man T-Shirt",
+        image: "https://www.emp-online.com/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dwe34db643/images/1/4/6/3/146311a-emp.jpg?sw=350&sh=400&sm=fit&sfrm=png",
         price: 23
       },
             {
         id: 2,
-        name : "Men Boots",
-        image: "",
-        price: 34
+        name : "Man Boots",
+        image: "https://images-na.ssl-images-amazon.com/images/I/71Zk9ftWJXL._AC_UY500_.jpg",
+        price: 74
+      },
+      {
+        id: 2,
+        name : "Man Hat",
+        image: "https://i.ebayimg.com/images/g/tm0AAOSwx1Rdy9Wc/s-l640.jpg",
+        price: 18
       }
     ]
 
@@ -219,8 +225,12 @@
       nameTag.innerHTML = product.name;
 
       const priceTag = document.createElement("span");
-      priceTag.innerHTML = "Price: " + product.price
+      priceTag.innerHTML = "Price: " + product.price +" €"
 
+      const productImg = document.createElement("img");
+      productImg.classList.add("card-img-top");
+      productImg.src = product.image 
+      
       const buyButton = document.createElement("button");
       buyButton.classList.add("btn");
       buyButton.classList.add("btn-primary");
@@ -233,6 +243,7 @@
             name: "click_on_buy",
             productName: product.name,
             price: product.price,
+            image: product.image,
             created_at: new Date()
           })
         }else{
@@ -243,6 +254,7 @@
       };
 
       cardContainer.appendChild(nameTag);
+     cardContainer.appendChild(productImg);
       cardContainer.appendChild(priceTag);
       cardContainer.appendChild(buyButton);
 
@@ -262,6 +274,7 @@
 
 
   </script>
+  
 </body>
 
 </html>
