@@ -12,35 +12,18 @@
   <link rel="stylesheet" href="../style.css" />
   <script type="text/javascript" src="/webtrekk_v4.min.js"></script>
 
-  
-
-<!-- Webtrekk Tag Integration -->
-  <script>
-    window._tiConfig = window._tiConfig || {
-    tiDomain: 'responder.wt-safetag.com',
-    tiId: '876936451222772',
-    // customDomain: 'sub.domain.tld',
-    // customPath: 'js/container_script.js',
-    option: {}
-};
-
-/** start TagIntegration loader  */
-(function(a,d,c,f){a.wts=a.wts||[];var g=function(b){var a="";b.customDomain&&b.customPath?a=b.customDomain+"/"+b.customPath:b.tiDomain&&b.tiId&&(a=b.tiDomain+"/resp/api/get/"+b.tiId+"?url="+encodeURIComponent("https://"+d.location.host+"/")+"&v=5");if(b.option)for(var c in b.option)a+="&"+c+"="+encodeURIComponent(b.option[c]);return a};if(-1===d.cookie.indexOf("wt_r=1")){var e=d.getElementsByTagName(c)[0];c=d.createElement(c);c.async=!0;c.onload=function(){if("undefined"!==typeof a.wt_r&&!isNaN(a.wt_r)){var b=
-new Date,c=b.getTime()+1E3*parseInt(a.wt_r);b.setTime(c);d.cookie="wt_r=1;path=/;expires="+b.toUTCString()}};c.onerror=function(){"undefined"!==typeof a.wt_mcp_hide&&"function"===typeof a.wt_mcp_hide.show&&(a.wt_mcp_hide.show(),a.wt_mcp_hide.show=function(){})};c.src="//"+g(f);e.parentNode.insertBefore(c,e)}})(window,document,"script",_tiConfig);
-
-/** end TagIntegration loader */
-
-  </script>
 
 
 
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KH7VHCM');</script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KH7VHCM');</script>
   <!-- End Google Tag Manager -->
 
   <script>
@@ -68,7 +51,7 @@ new Date,c=b.getTime()+1E3*parseInt(a.wt_r);b.setTime(c);d.cookie="wt_r=1;path=/
     // initate
     var wt = new webtrekkV3();
 
-    // products
+    // MARKETING AUTOMATION products -https://docs.mapp.com/display/MA/Advanced+Configuration
     wt.product = "pullover;jeans";
     wt.productCategory = {
       1: "tops;jeans",
@@ -108,8 +91,8 @@ new Date,c=b.getTime()+1E3*parseInt(a.wt_r);b.setTime(c);d.cookie="wt_r=1;path=/
 <body>
 
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KH7VHCM"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KH7VHCM" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- NAvBAR -->
@@ -125,7 +108,7 @@ new Date,c=b.getTime()+1E3*parseInt(a.wt_r);b.setTime(c);d.cookie="wt_r=1;path=/
   </nav>
 
   <!-- Product List -->
-  <div class="product-container">
+  <div class="product-container" id="prod-list-cont">
     <!-- Product 1 -->
     <div class="card product" style="width: 18rem">
       <img
@@ -172,6 +155,113 @@ new Date,c=b.getTime()+1E3*parseInt(a.wt_r);b.setTime(c);d.cookie="wt_r=1;path=/
     <p>© Daniele - Wanna be E.M.P. Merchandising HGmbH</p>
   </footer>
   <script src="../index.js"></script>
+
+  <script>
+
+    const productList = [
+      {
+        id: 1,
+        name : "Men Shirt",
+        image: "",
+        price: 23
+      },
+            {
+        id: 2,
+        name : "Men Boots",
+        image: "",
+        price: 34
+      }
+    ]
+
+    
+    // data layer push
+    if(window.dataLayer){
+      dataLayer.push({
+        productList
+      })
+    }
+    
+
+    /*
+    <div class="card product" style="width: 18rem">
+      <img
+        src="https://www.emp.de/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw81df550c/images/4/6/6/8/466821a.jpg?sw=1000&sh=800&sm=fit&sfrm=png"
+        class="card-img-top" alt="sweater">
+      <div class="card-body">
+        <h5 class="card-title">Holiday Sweater AC/DC</h5>
+        <p class="card-text">
+          Price: 64,99 €
+        </p>
+        <a href="../subpages/Product Page/productPage_sweater.html" class="btn btn-primary">Buy</a>
+      </div>
+    </div>
+    */
+
+
+    function renderSingleProduct(product){
+      const productContainer = document.createElement("div");
+
+      productContainer.classList.add("card");
+      productContainer.classList.add("product");
+
+      // css
+      productContainer.style.width = "width: 18rem";
+      productContainer.style.display = "flex";
+      productContainer.style.flexDirection = "column";
+
+      const cardContainer = document.createElement("div");
+      cardContainer.classList.add("card-body");
+
+      cardContainer.style.display = "flex";
+      cardContainer.style.flexDirection = "column";
+
+      const nameTag = document.createElement("span");
+      nameTag.innerHTML = product.name;
+
+      const priceTag = document.createElement("span");
+      priceTag.innerHTML = "Price: " + product.price
+
+      const buyButton = document.createElement("button");
+      buyButton.classList.add("btn");
+      buyButton.classList.add("btn-primary");
+      buyButton.innerHTML = "Buy";
+      buyButton.onclick = function(){
+
+      // data layer push
+      if(window.dataLayer){
+        dataLayer.push({
+            name: "click_on_buy",
+            productName: product.name,
+            price: product.price,
+            created_at: new Date()
+          })
+        }else{
+          console.warn("Analytics won't work without a proper data layer setup!")
+        }
+
+        console.log("pushed to data layer")
+      };
+
+      cardContainer.appendChild(nameTag);
+      cardContainer.appendChild(priceTag);
+      cardContainer.appendChild(buyButton);
+
+      // oldest parent
+      productContainer.appendChild(cardContainer);
+
+      // push to the list
+      document.getElementById("prod-list-cont").appendChild(productContainer);
+    }
+
+    // call for each
+    function renderProductList(list){
+      list.forEach(renderSingleProduct)
+    }
+
+    renderProductList(productList);
+
+
+  </script>
 </body>
 
 </html>
